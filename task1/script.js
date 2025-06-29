@@ -7,9 +7,15 @@ arr.forEach(button => {
  button.addEventListener('click', (x) =>{
 
  if(x.target.innerHTML=='='){
-     string=eval(string).toString();
-    get.value=string;
- }
+   try{
+    string=eval(string).toString();
+   get.value=string;
+   }
+   catch(err){
+       get.value="Error";
+       string="";
+   }
+}
  else if(x.target.innerHTML == 'ac'){
      string="";
      get.value=string;
